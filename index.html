@@ -259,11 +259,15 @@ footer h4{font:700 .78rem var(--sans);letter-spacing:.16em;text-transform:upperc
 footer a{color:#fff}
 footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 .hours{margin:0;padding:0;list-style:none}
-.hours li{display:flex;justify-content:space-between;gap:16px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.social{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.hours .t{text-align:right;font-variant-numeric:tabular-nums;line-height:1.6}
+.social{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.28);color:#fff;transition:background .2s,color .2s,border-color .2s}
+.social a:hover{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+.social svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .legal{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.9rem}
 .credit{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
-.credit svg{width:20px;height:20px;flex:none;color:var(--brass)}
+.credit svg{width:22px;height:22px;flex:none;display:block;fill:none;stroke:var(--brass);stroke-width:26;stroke-linecap:butt;stroke-linejoin:miter}
 
 /* reveal */
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
@@ -310,9 +314,9 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 }
 @media (max-width:760px){
   .svc .more{display:inline-flex;align-items:center;min-height:44px}
-  footer address a,.social a,.credit a{display:inline-block;padding:10px 0}
-  .social{gap:22px}
-  .credit a{padding:10px 4px}
+  footer address a,.credit a{display:inline-block;padding:10px 0}
+  .credit a{display:inline;padding:0}
+  .credit>span{padding:8px 0;line-height:1.5}
   .logo .name{font-size:1.35rem}
   .logo .tag{font-size:.8rem}
   .nav{min-height:70px}
@@ -330,7 +334,8 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   .svc-grid,.tech-grid{grid-template-columns:1fr}
   .brand-list span{display:none}
   .foot-grid{grid-template-columns:1fr}
-  .legal{flex-direction:column}
+  .legal{flex-direction:column;align-items:center;text-align:center}
+  .credit{flex-direction:column;gap:2px;text-align:center}
 }
 @media (max-width:420px){
   .proof-grid{grid-template-columns:1fr}
@@ -397,7 +402,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   <div class="visit rv" id="visit">
     <div class="vstatus">
       <div class="status"><span class="dot" id="v-dot"></span><span id="v-status">Opening times</span></div>
-      <small>Both practices<br>Mon to Fri 9am to 1pm, 2pm to 5:30pm<br>Saturday 9am to 1pm, 2pm to 4pm</small>
+      <small>Both practices<br>Mon to Fri 09:00 to 13:00, 14:00 to 17:30<br>Saturday 09:00 to 13:00, 14:00 to 16:00</small>
     </div>
     <div class="vb">
       <h3>Knutsford</h3>
@@ -636,7 +641,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
       </div>
       <div class="know-item">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Closed 1pm to 2pm</h3><p>Both practices close daily for lunch between 1pm and 2pm.</p>
+        <h3>Closed 13:00 to 14:00</h3><p>Both practices close daily for lunch between 13:00 and 14:00.</p>
       </div>
       <div class="know-item">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
@@ -715,9 +720,9 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
         <a class="logo" href="#top"><span class="name">Clare<i>&amp;</i>Illingworth</span><span class="tag">Optometrist and Contact Lens Practitioner</span></a>
         <p style="margin-top:18px;max-width:340px">Independent opticians in Knutsford and Wilmslow, owned by its founders since 1990. Still independent. Still local.</p>
         <div class="social">
-          <a href="https://www.facebook.com/ClareandIllingworth" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://www.instagram.com/theoptometrist/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://twitter.com/theoptometrist" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://www.facebook.com/ClareandIllingworth" target="_blank" rel="noopener" aria-label="Clare &amp; Illingworth on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/theoptometrist/" target="_blank" rel="noopener" aria-label="Clare &amp; Illingworth on Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="https://twitter.com/theoptometrist" target="_blank" rel="noopener" aria-label="Clare &amp; Illingworth on Twitter (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
         </div>
       </div>
       <div>
@@ -728,17 +733,17 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
       <div>
         <h4>Opening times</h4>
         <ul class="hours">
-          <li><span>Monday to Friday</span><span>9am to 1pm, 2pm to 5:30pm</span></li>
-          <li><span>Saturday</span><span>9am to 1pm, 2pm to 4pm</span></li>
+          <li><span>Monday to Friday</span><span class="t">09:00 to 13:00<br>14:00 to 17:30</span></li>
+          <li><span>Saturday</span><span class="t">09:00 to 13:00<br>14:00 to 16:00</span></li>
           <li><span>Sunday</span><span>Closed</span></li>
         </ul>
-        <p style="margin-top:12px;font-size:.9rem">Closed daily between 1pm and 2pm.</p>
+        <p style="margin-top:12px;font-size:.9rem">Closed daily between 13:00 and 14:00.</p>
       </div>
     </div>
     <div class="legal">
       <span>&copy; 2026 Clare &amp; Illingworth</span>
       <span class="credit">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21V10l6 3V10l6 3V6h3v7l5 2v6z"/></svg>
+        <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M30 464H480"/><path d="M70 464V268L195 205V268L325 205V268L445 205V464"/><path d="M347 250L359 45H413L425 205"/><path d="M362 78H410"/><rect x="120" y="318" width="64" height="64"/><rect x="226" y="318" width="64" height="64"/><rect x="331" y="318" width="64" height="64"/></svg>
         <span>Another small business site, sorted, by <a href="https://pixel-north.co.uk" target="_blank" rel="noopener">Pixel North</a></span>
       </span>
     </div>
@@ -768,20 +773,20 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
     return {d:days[o.weekday],m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
   }
   function fmt(mins){
-    var h=Math.floor(mins/60),mm=mins%60,s=h>=12?'pm':'am',h12=h%12||12;
-    return h12+(mm?':'+(mm<10?'0':'')+mm:'')+s;
+    var h=Math.floor(mins/60),mm=mins%60;
+    return (h<10?'0':'')+h+':'+(mm<10?'0':'')+mm;
   }
   function status(){
     var n=ukNow(),dot=document.getElementById('v-dot'),el=document.getElementById('v-status');
     var close2=n.d===6?16*60:17*60+30;
     var spans=n.d===0?[]:[[9*60,13*60],[14*60,close2]];
     var cls='',txt='';
-    if(!spans.length){cls='';txt='Closed today. Opens Monday at 9am';}
-    else if(n.m>=spans[0][0]&&n.m<spans[0][1]){cls='open';txt='Open now, until 1pm';}
+    if(!spans.length){cls='';txt='Closed today. Opens Monday at 09:00';}
+    else if(n.m>=spans[0][0]&&n.m<spans[0][1]){cls='open';txt='Open now, until 13:00';}
     else if(n.m>=spans[1][0]&&n.m<spans[1][1]){cls='open';txt='Open now, until '+fmt(spans[1][1]);}
-    else if(n.m>=spans[0][1]&&n.m<spans[1][0]){cls='lunch';txt='Closed for lunch, reopens at 2pm';}
-    else if(n.m<spans[0][0]){cls='';txt='Closed, opens today at 9am';}
-    else{cls='';txt=n.d===6?'Closed, opens Monday at 9am':'Closed, opens tomorrow at 9am';}
+    else if(n.m>=spans[0][1]&&n.m<spans[1][0]){cls='lunch';txt='Closed for lunch, reopens at 14:00';}
+    else if(n.m<spans[0][0]){cls='';txt='Closed, opens today at 09:00';}
+    else{cls='';txt=n.d===6?'Closed, opens Monday at 09:00':'Closed, opens tomorrow at 09:00';}
     dot.className='dot '+cls;el.textContent=txt;
   }
   status();setInterval(status,60000);
