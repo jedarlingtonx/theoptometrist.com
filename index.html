@@ -199,6 +199,22 @@ section.block{padding:96px 0}
 .know-item h3{font-size:1.35rem;margin-bottom:.25em}
 .know-item p{color:var(--muted);font-size:.96rem;margin:0;line-height:1.55}
 
+
+/* dry eye */
+.dry{background:var(--ivory);padding:0 0 96px}
+.dry-box{background:var(--mist);border-radius:22px;padding:38px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+.dry-ico{width:72px;height:72px;border-radius:20px;background:#fff;color:var(--teal-d);display:grid;place-items:center}
+.dry-ico svg{width:38px;height:38px}
+.dry-box h2{font-size:clamp(1.9rem,3vw,2.4rem);margin-bottom:.2em}
+.dry-box p{margin:0;color:var(--muted);max-width:620px}
+.dry-box p strong{color:var(--ink)}
+/* closer */
+.closer{background:var(--ink);color:#fff;text-align:center;padding:92px 0;position:relative;overflow:hidden}
+.closer::before{content:"";position:absolute;left:50%;top:-40%;width:80%;height:180%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(14,124,123,.4),rgba(14,124,123,0) 70%);pointer-events:none}
+.closer .wrap{position:relative}
+.closer-line{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.08;margin:0 0 .6em}
+.closer-line em{color:var(--brass);font-weight:500}
+
 /* find us */
 .find{background:var(--ivory)}
 .find-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
@@ -252,6 +268,8 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   .know-box{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:860px){
+  .dry-box{grid-template-columns:1fr;padding:30px 26px;gap:18px}
+  .dry-box .btn{justify-self:start}
   .welcome-grid,.eye-grid,.duo,.find-grid,.brand-cols{grid-template-columns:1fr}
   .welcome-grid,.eye-grid{gap:34px}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -329,7 +347,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
     <div>
       <span class="eyebrow kicker">Independent opticians, Knutsford and Wilmslow</span>
       <h1>Clear sight, <em>beautifully</em> framed.</h1>
-      <p class="lead">Thorough eye examinations, designer and independent frames, and a team of qualified Dispensing Opticians who take the time to get it right. Looking after Cheshire's eyes since 1990.</p>
+      <p class="lead">Still owned by its two founders and proudly independent for 36 years. Thorough eye examinations, designer and independent frames, and a team who take the time to get to know you.</p>
       <div class="hero-btns">
         <a class="btn btn-light" href="tel:01565632066" id="hero-call">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
@@ -414,7 +432,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 <!-- PROOF -->
 <section class="proof" aria-label="At a glance">
   <div class="wrap proof-grid">
-    <div class="stat rv"><b>1990</b><span>Trading since</span><small>An established, independent practice</small></div>
+    <div class="stat rv"><b>36</b><span>Years independent</span><small>Still owned by its founders</small></div>
     <div class="stat rv"><b>2</b><span>Practices</span><small>Knutsford and Wilmslow</small></div>
     <div class="stat rv"><b>5</b><span>Dispensing Opticians</span><small>All fully qualified</small></div>
     <div class="stat rv"><b>Zeiss</b><span>and Nikon lenses</span><small>Our preferred lens makers</small></div>
@@ -425,13 +443,15 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 <section class="block welcome" id="about">
   <div class="wrap welcome-grid">
     <div class="rv">
-      <span class="eyebrow">Welcome</span>
-      <h2>Familiar faces, looking after your eyes.</h2>
-      <p class="lead">Clare &amp; Illingworth was founded by an optometrist and a dispensing optician, and it still feels like a practice run by people who care how you see.</p>
+      <span class="eyebrow">Proudly independent</span>
+      <h2>Independent for 36 years. Still owned by the two who started it.</h2>
+      <p class="lead">Since 1990, Clare &amp; Illingworth has served the communities of Knutsford and Wilmslow, owned exclusively by its original founders.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span>See a familiar face, so all your care is in one place and builds over time.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span>Clinical notes kept securely and backed up multiple times.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span>High-quality eyecare, accessible to everyone, with great value products.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span><strong>Independently owned.</strong> Not part of a national chain, corporate group or buying group.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span><strong>Proudly local.</strong> Lasting relationships with generations of patients in Knutsford and Wilmslow.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span><strong>Personal service.</strong> We take the time to get to know you and offer genuinely individual care.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span><strong>Professional teams.</strong> Optometrists, dispensing opticians and practice teams at the heart of everything.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span><strong>The freedom to do things our way.</strong> We choose the products, services and care we believe are right for you.</span></li>
       </ul>
     </div>
     <div class="founders rv">
@@ -484,6 +504,21 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
         <ul><li>Optometrists experienced in paediatric testing</li><li>Myopia control lenses</li><li>A wide choice of young frames</li></ul>
         <a class="more" href="tel:01565632066">Book for your child</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- DRY EYE -->
+<section class="dry" aria-labelledby="dry-h">
+  <div class="wrap">
+    <div class="dry-box rv">
+      <div class="dry-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.2"/></svg></div>
+      <div>
+        <span class="eyebrow">Specialist care, Wilmslow</span>
+        <h2 id="dry-h">Dry Eye Clinic</h2>
+        <p>A dedicated clinic offering specialist assessments and treatments to anyone who needs them. <strong>You don't need to be an existing Clare &amp; Illingworth patient.</strong></p>
+      </div>
+      <a class="btn btn-primary" href="tel:01625530498">Call Wilmslow 01625 530498</a>
     </div>
   </div>
 </section>
@@ -616,6 +651,17 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   </div>
 </section>
 
+<!-- CLOSER -->
+<section class="closer">
+  <div class="wrap rv">
+    <p class="closer-line">Still independent.<br>Still local.<br><em>Still Clare &amp; Illingworth.</em></p>
+    <div class="hero-btns" style="justify-content:center">
+      <a class="btn btn-light" href="tel:01565632066">Call Knutsford 01565 632066</a>
+      <a class="btn btn-ghost" href="tel:01625530498">Call Wilmslow 01625 530498</a>
+    </div>
+  </div>
+</section>
+
 <!-- FIND US -->
 <section class="block find" id="find-us">
   <div class="wrap">
@@ -662,7 +708,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
     <div class="foot-grid">
       <div>
         <a class="logo" href="#top"><span class="name">Clare<i>&amp;</i>Illingworth</span><span class="tag">Optometrist and Contact Lens Practitioner</span></a>
-        <p style="margin-top:18px;max-width:340px">Independent opticians in Knutsford and Wilmslow, Cheshire, since 1990.</p>
+        <p style="margin-top:18px;max-width:340px">Independent opticians in Knutsford and Wilmslow, owned by its founders since 1990. Still independent. Still local.</p>
         <div class="social">
           <a href="https://www.facebook.com/ClareandIllingworth" target="_blank" rel="noopener">Facebook</a>
           <a href="https://www.instagram.com/theoptometrist/" target="_blank" rel="noopener">Instagram</a>
