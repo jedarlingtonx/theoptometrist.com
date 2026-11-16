@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clare &amp; Illingworth | Independent opticians in Knutsford and Wilmslow</title>
+<meta name="description" content="Concept home page by Pixel North for Clare &amp; Illingworth, independent optometrists and contact lens practitioners in Knutsford and Wilmslow since 1990.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E2625'/%3E%3Ccircle cx='21' cy='33' r='11' fill='none' stroke='%23D9B26B' stroke-width='4'/%3E%3Ccircle cx='43' cy='33' r='11' fill='none' stroke='%23D9B26B' stroke-width='4'/%3E%3Cpath d='M32 31q0-3 0 0' stroke='%23D9B26B' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E2625;        /* deep charcoal-green */
+  --ink2:#2B3534;
+  --ivory:#FAF7F2;
+  --white:#FFFFFF;
+  --sand:#F1EBDF;
+  --teal:#0E7C7B;
+  --teal-d:#0A5E5D;
+  --mist:#E3F1F0;
+  --brass:#D9B26B;
+  --brass-d:#8A6420;
+  --text:#2A3130;
+  --muted:#5B6665;
+  --radius:16px;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.65;color:var(--text);background:var(--ivory);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:var(--teal-d)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0 0 .5em;color:var(--ink);letter-spacing:-.005em}
+h1{font-size:clamp(2.7rem,6vw,4.7rem)}
+h2{font-size:clamp(2.1rem,4vw,3.1rem)}
+h3{font-size:1.65rem}
+p{margin:0 0 1em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-d);margin-bottom:.9rem}
+.lead{font-size:1.15rem;color:var(--muted);max-width:620px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6em;font:700 1rem/1 var(--sans);text-decoration:none;padding:15px 24px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-d)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-outline{border-color:var(--teal);color:var(--teal-d);background:transparent}
+.btn-outline:hover{background:var(--mist)}
+
+/* concept ribbon */
+.ribbon{background:var(--teal-d);color:#fff;font-size:.88rem;text-align:center;padding:9px 16px;line-height:1.4}
+.ribbon strong{font-weight:700}
+
+/* header */
+header.site{background:var(--ivory);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(30,38,37,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
+.logo{text-decoration:none;color:var(--ink);display:block;line-height:1}
+.logo .name{font-family:var(--serif);font-size:1.75rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;display:block;border-bottom:1px solid var(--ink);padding-bottom:5px}
+.logo .name i{font-style:normal;color:var(--teal);padding:0 .08em}
+.logo .tag{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--muted);display:block;margin-top:5px;letter-spacing:.02em}
+nav ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:6px}
+nav a{display:block;white-space:nowrap;text-decoration:none;color:var(--ink);font-weight:500;font-size:.96rem;padding:9px 12px;position:relative}
+nav a:not(.btn)::after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+nav a:not(.btn):hover::after,nav a:not(.btn):focus-visible::after{transform:scaleX(1)}
+nav .btn{padding:12px 20px;font-size:.95rem;color:#fff;margin-left:6px}
+.burger{display:none;background:none;border:0;padding:10px;cursor:pointer;color:var(--ink)}
+.burger svg{width:28px;height:28px}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-8%;top:-30%;width:70%;height:160%;background:radial-gradient(closest-side,rgba(14,124,123,.55),rgba(14,124,123,0) 70%);pointer-events:none}
+.hero .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:84px 24px 150px;position:relative}
+.hero h1{color:#fff;margin-bottom:.4em}
+.hero h1 em{font-style:italic;color:var(--brass);font-weight:500}
+.hero .kicker{color:var(--brass)}
+.hero p.lead{color:rgba(255,255,255,.86);font-size:1.2rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-art{position:relative;aspect-ratio:1/.86}
+.hero-art svg{width:100%;height:100%}
+.chart{position:absolute;left:-12%;bottom:-14%;text-align:left;font-family:var(--serif);font-weight:600;color:rgba(255,255,255,.075);text-align:right;line-height:1.02;letter-spacing:.22em;user-select:none;pointer-events:none}
+.chart span{display:block}
+
+/* visit card */
+.visit-band{margin-top:-96px;position:relative;z-index:5;background:linear-gradient(180deg,transparent 96px,#fff 96px)}
+.visit{background:#fff;border-radius:22px;box-shadow:0 24px 60px -20px rgba(18,28,27,.35);padding:26px 30px;display:grid;grid-template-columns:auto 1.15fr 1fr auto;gap:28px;align-items:center}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tab{font:700 .95rem var(--sans);border:2px solid var(--mist);background:var(--mist);color:var(--teal-d);padding:10px 18px;border-radius:999px;cursor:pointer;text-align:left;transition:all .2s}
+.tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.visit h3{font-size:1.5rem;margin-bottom:.15em}
+.visit address{font-style:normal;color:var(--muted);line-height:1.5}
+.status{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);margin-bottom:.15em}
+.dot{width:11px;height:11px;border-radius:50%;background:#9AA5A4;flex:none}
+.dot.open{background:#1E9E5A;box-shadow:0 0 0 4px rgba(30,158,90,.18)}
+.dot.lunch{background:var(--brass)}
+.visit small{color:var(--muted);display:block;line-height:1.45}
+.visit-cta{display:flex;flex-direction:column;gap:8px}
+.visit-cta .btn{justify-content:center}
+
+/* proof */
+.proof{background:#fff;padding:44px 0 60px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:var(--ivory);border:1px solid rgba(30,38,37,.07);border-radius:var(--radius);padding:24px 22px;text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--teal-d);font-weight:700;margin-bottom:.15em}
+.stat span{font-weight:700;color:var(--ink);display:block;line-height:1.3}
+.stat small{display:block;color:var(--muted);margin-top:4px;line-height:1.4}
+
+section.block{padding:96px 0}
+.head{max-width:700px;margin-bottom:46px}
+.head.center{margin-left:auto;margin-right:auto;text-align:center}
+.head.center .lead{margin-left:auto;margin-right:auto}
+
+/* welcome */
+.welcome{background:var(--ivory)}
+.welcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.founders{display:grid;gap:16px}
+.person{background:#fff;border-radius:var(--radius);padding:22px;display:flex;gap:18px;align-items:center;box-shadow:0 10px 30px -18px rgba(18,28,27,.3)}
+.mono{flex:none;width:68px;height:68px;border-radius:50%;background:var(--ink);color:var(--brass);font-family:var(--serif);font-size:1.7rem;font-weight:700;display:grid;place-items:center;letter-spacing:.02em}
+.person h3{font-size:1.5rem;margin:0}
+.person p{margin:0;color:var(--muted);line-height:1.45}
+.person .role{color:var(--teal-d);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks svg{width:22px;height:22px;flex:none;color:var(--teal);margin-top:3px}
+
+/* services */
+.services{background:var(--sand)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{background:#fff;border-radius:var(--radius);padding:30px 26px;box-shadow:0 12px 34px -22px rgba(18,28,27,.35);display:flex;flex-direction:column}
+.ico{width:56px;height:56px;border-radius:16px;background:var(--mist);color:var(--teal-d);display:grid;place-items:center;margin-bottom:18px}
+.ico svg{width:30px;height:30px}
+.svc h3{font-size:1.55rem}
+.svc p{color:var(--muted);font-size:.98rem;margin-bottom:1em}
+.svc ul{list-style:none;margin:0 0 1.2em;padding:0;font-size:.95rem}
+.svc li{padding-left:22px;position:relative;margin-bottom:.35em}
+.svc li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--brass)}
+.svc .more{margin-top:auto;font-weight:700;text-decoration:none}
+.svc .more:hover{text-decoration:underline}
+
+/* technology */
+.tech{background:var(--ink);color:#fff}
+.tech h2{color:#fff}
+.tech .lead{color:rgba(255,255,255,.78)}
+.tech .eyebrow{color:var(--brass)}
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tool{border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:26px 22px;background:rgba(255,255,255,.04)}
+.tool svg{width:44px;height:44px;color:var(--brass);margin-bottom:14px}
+.tool h3{color:#fff;font-size:1.4rem;margin-bottom:.3em}
+.tool p{color:rgba(255,255,255,.75);font-size:.95rem;margin:0;line-height:1.55}
+
+/* eyewear and brands */
+.eyewear{background:#fff}
+.eye-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.quote{margin:26px 0 0;padding:20px 24px;border-left:4px solid var(--brass);background:var(--ivory);border-radius:0 var(--radius) var(--radius) 0;font-family:var(--serif);font-size:1.35rem;line-height:1.35;color:var(--ink)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.steps li{counter-increment:s;display:flex;gap:18px;align-items:flex-start;background:var(--ivory);border-radius:var(--radius);padding:20px 22px}
+.steps li::before{content:counter(s);flex:none;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.3rem}
+.steps b{display:block;color:var(--ink);font-size:1.05rem}
+.steps span{color:var(--muted);font-size:.96rem;line-height:1.5;display:block}
+
+.brands{background:var(--ink2);color:#fff}
+.brands h2{color:#fff}
+.brands .lead{color:rgba(255,255,255,.78)}
+.brands .eyebrow{color:var(--brass)}
+.brand-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.brand-cols h3{color:var(--brass);font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.brand-list{list-style:none;margin:0;padding:0}
+.brand-list li{display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.brand-list strong{font-family:var(--serif);font-size:1.75rem;font-weight:600;color:#fff;line-height:1.1}
+.brand-list span{color:rgba(255,255,255,.7);font-size:.93rem;text-align:right;max-width:55%;line-height:1.4}
+.brand-note{margin-top:30px;color:rgba(255,255,255,.75);font-size:.98rem}
+
+/* contact lenses + kids */
+.cl{background:var(--ivory)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border-radius:22px;padding:42px 38px}
+.panel.a{background:#fff;box-shadow:0 12px 34px -22px rgba(18,28,27,.35)}
+.panel.b{background:var(--teal-d);color:#fff}
+.panel.b h2,.panel.b h3{color:#fff}
+.panel.b .eyebrow{color:var(--brass)}
+.panel h2{font-size:clamp(1.9rem,3vw,2.5rem)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;padding:0;list-style:none}
+.chips li{background:var(--mist);color:var(--teal-d);font-weight:700;font-size:.88rem;padding:7px 14px;border-radius:999px}
+.panel.b .chips li{background:rgba(255,255,255,.14);color:#fff}
+
+/* good to know */
+.know{background:var(--mist);padding:76px 0}
+.know-box{background:#fff;border-radius:22px;padding:38px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.know-item .ico{margin-bottom:12px}
+.know-item h3{font-size:1.35rem;margin-bottom:.25em}
+.know-item p{color:var(--muted);font-size:.96rem;margin:0;line-height:1.55}
+
+/* find us */
+.find{background:var(--ivory)}
+.find-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.branches{display:grid;gap:18px}
+.branch{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:0 12px 34px -22px rgba(18,28,27,.35);border:2px solid transparent}
+.branch.main{border-color:var(--teal)}
+.branch .pill{display:inline-block;background:var(--teal);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.branch address{font-style:normal;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.branch .row{display:flex;flex-wrap:wrap;gap:10px}
+.branch .btn{padding:11px 18px;font-size:.92rem}
+.map{border-radius:var(--radius);background:linear-gradient(160deg,var(--mist),#cfe5e3);position:relative;min-height:340px;overflow:hidden;display:grid;place-items:center;text-align:center;padding:30px}
+.map::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(14,124,123,.09) 1px,transparent 1px) 0 0/46px 46px,
+  linear-gradient(0deg,rgba(14,124,123,.09) 1px,transparent 1px) 0 0/46px 46px}
+.map>div{position:relative}
+.map svg{width:54px;height:54px;color:var(--teal-d);margin:0 auto 10px}
+.map p{color:var(--ink);font-weight:700;margin-bottom:14px}
+
+/* footer */
+footer{background:#141B1A;color:rgba(255,255,255,.78);padding:64px 0 30px;font-size:.96rem}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer .logo .name{color:#fff;border-color:rgba(255,255,255,.7)}
+footer .logo .tag{color:rgba(255,255,255,.6)}
+footer h4{font:700 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 14px}
+footer a{color:#fff}
+footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
+.hours{margin:0;padding:0;list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.social{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap}
+.legal{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.9rem}
+.credit{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+.credit svg{width:20px;height:20px;flex:none;color:var(--brass)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn,.tab{transition:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .hero .hero-grid{grid-template-columns:1fr;padding:56px 24px 170px;gap:10px}
+  .hero-art{max-width:520px;margin:0 auto;width:100%}
+  .visit{grid-template-columns:1fr 1fr;gap:22px}
+  .tabs{flex-direction:row;grid-column:1/-1}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid,.tech-grid{grid-template-columns:repeat(2,1fr)}
+  .know-box{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .welcome-grid,.eye-grid,.duo,.find-grid,.brand-cols{grid-template-columns:1fr}
+  .welcome-grid,.eye-grid{gap:34px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid>div:first-child{grid-column:1/-1}
+}
+@media (max-width:1020px){
+  .burger{display:block}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--ivory);border-bottom:1px solid rgba(30,38,37,.1);display:none;padding:10px 24px 22px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:stretch;gap:0}
+  nav a:not(.btn){padding:14px 4px;border-bottom:1px solid rgba(30,38,37,.08)}
+  nav a:not(.btn)::after{display:none}
+  nav .btn{margin:16px 0 0;justify-content:center}
+}
+@media (max-width:760px){
+  .logo .name{font-size:1.35rem}
+  .logo .tag{font-size:.8rem}
+  .nav{min-height:70px}
+  section.block{padding:72px 0}
+  .hero .hero-grid{padding:44px 20px 176px}
+  .hero-btns .btn{flex:1 1 100%;justify-content:center}
+  .wrap{padding:0 20px}
+  .visit{grid-template-columns:1fr;padding:22px}
+  .tabs{flex-direction:row}
+  .tab{flex:1;text-align:center}
+  .proof{padding:44px 0}
+  .panel{padding:32px 24px}
+  .know-box{grid-template-columns:1fr;padding:28px 24px}
+  .svc-grid,.tech-grid{grid-template-columns:1fr}
+  .brand-list span{display:none}
+  .foot-grid{grid-template-columns:1fr}
+  .legal{flex-direction:column}
+  .chart{display:none}
+}
+@media (max-width:420px){
+  .proof-grid{grid-template-columns:1fr}
+  .credit{white-space:normal}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="ribbon"><strong>Concept home page by Pixel North.</strong> Designed for Clare &amp; Illingworth, using your current website's words and facts. Not a live website.</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Clare and Illingworth, home">
+      <span class="name">Clare<i>&amp;</i>Illingworth</span>
+      <span class="tag">Optometrist and Contact Lens Practitioner</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="menu" aria-label="Main">
+      <ul>
+        <li><a href="#eye-care">Eye care</a></li>
+        <li><a href="#eyewear">Eyewear</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#contact-lenses">Contact lenses</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#find-us">Find us</a></li>
+        <li><a class="btn btn-primary" href="tel:01565632066">Book an eye test</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow kicker">Independent opticians, Knutsford and Wilmslow</span>
+      <h1>Clear sight, <em>beautifully</em> framed.</h1>
+      <p class="lead">Thorough eye examinations, designer and independent frames, and a team of qualified Dispensing Opticians who take the time to get it right. Looking after Cheshire's eyes since 1990.</p>
+      <div class="hero-btns">
+        <a class="btn btn-light" href="tel:01565632066" id="hero-call">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call Knutsford 01565 632066
+        </a>
+        <a class="btn btn-ghost" href="#eye-care">Our services</a>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="chart">
+        <span style="font-size:3.4rem">E</span>
+        <span style="font-size:2.7rem">F P</span>
+        <span style="font-size:2.1rem">T O Z</span>
+        <span style="font-size:1.6rem">L P E D</span>
+        <span style="font-size:1.2rem">P E C F D</span>
+      </div>
+      <svg viewBox="0 0 560 480" fill="none">
+        <defs>
+          <linearGradient id="lensA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7FD6D3" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#0E7C7B" stop-opacity=".18"/>
+          </linearGradient>
+          <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F3D99A"/>
+            <stop offset="1" stop-color="#B88A3E"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="280" cy="420" rx="210" ry="18" fill="#000" opacity=".28"/>
+        <!-- arms -->
+        <path d="M82 214 C40 214 24 236 30 290" stroke="url(#rim)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M478 214 C520 214 536 236 530 290" stroke="url(#rim)" stroke-width="9" stroke-linecap="round"/>
+        <!-- lenses -->
+        <rect x="78" y="168" width="190" height="168" rx="58" fill="url(#lensA)" stroke="url(#rim)" stroke-width="10"/>
+        <rect x="292" y="168" width="190" height="168" rx="58" fill="url(#lensA)" stroke="url(#rim)" stroke-width="10"/>
+        <!-- bridge -->
+        <path d="M268 222 C276 204 284 204 292 222" stroke="url(#rim)" stroke-width="9" stroke-linecap="round"/>
+        <!-- brow bar -->
+        <path d="M92 190 C150 172 210 172 262 186" stroke="#F3D99A" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+        <path d="M298 186 C350 172 410 172 468 190" stroke="#F3D99A" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+        <!-- reflections -->
+        <path d="M112 214 L168 190" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+        <path d="M130 244 L152 235" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".4"/>
+        <path d="M326 214 L382 190" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+        <path d="M344 244 L366 235" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".4"/>
+        <!-- floating focus rings -->
+        <circle cx="470" cy="96" r="34" stroke="#D9B26B" stroke-width="2" opacity=".6"/>
+        <circle cx="470" cy="96" r="18" stroke="#D9B26B" stroke-width="2" opacity=".5"/>
+        <circle cx="470" cy="96" r="4" fill="#D9B26B"/>
+        <path d="M70 92 l8 -18 l8 18 l18 8 l-18 8 l-8 18 l-8 -18 l-18 -8z" fill="#D9B26B" opacity=".75"/>
+        <path d="M118 396 l5 -11 l5 11 l11 5 l-11 5 l-5 11 l-5 -11 l-11 -5z" fill="#7FD6D3" opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT CARD -->
+<div class="visit-band"><div class="wrap">
+  <div class="visit rv" id="visit">
+    <div class="tabs" role="group" aria-label="Choose a practice">
+      <button class="tab" type="button" data-b="knutsford" aria-pressed="true">Knutsford</button>
+      <button class="tab" type="button" data-b="wilmslow" aria-pressed="false">Wilmslow</button>
+    </div>
+    <div>
+      <h3 id="v-name">Clare &amp; Illingworth Knutsford</h3>
+      <address id="v-addr">101 King Street<br>Knutsford, Cheshire WA16 6EQ</address>
+    </div>
+    <div>
+      <div class="status"><span class="dot" id="v-dot"></span><span id="v-status">Opening times</span></div>
+      <small>Mon to Fri 9am to 1pm, 2pm to 5:30pm<br>Saturday 9am to 1pm, 2pm to 4pm</small>
+    </div>
+    <div class="visit-cta">
+      <a class="btn btn-primary" id="v-call" href="tel:01565632066">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span id="v-tel">01565 632066</span>
+      </a>
+      <a class="btn btn-outline" id="v-mail" href="mailto:knutsford@theoptometrist.com">Email the practice</a>
+    </div>
+  </div>
+</div></div>
+
+<!-- PROOF -->
+<section class="proof" aria-label="At a glance">
+  <div class="wrap proof-grid">
+    <div class="stat rv"><b>1990</b><span>Trading since</span><small>An established, independent practice</small></div>
+    <div class="stat rv"><b>2</b><span>Practices</span><small>Knutsford and Wilmslow</small></div>
+    <div class="stat rv"><b>5</b><span>Dispensing Opticians</span><small>All fully qualified</small></div>
+    <div class="stat rv"><b>Zeiss</b><span>and Nikon lenses</span><small>Our preferred lens makers</small></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="block welcome" id="about">
+  <div class="wrap welcome-grid">
+    <div class="rv">
+      <span class="eyebrow">Welcome</span>
+      <h2>Familiar faces, looking after your eyes.</h2>
+      <p class="lead">Clare &amp; Illingworth was founded by an optometrist and a dispensing optician, and it still feels like a practice run by people who care how you see.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span>See a familiar face, so all your care is in one place and builds over time.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span>Clinical notes kept securely and backed up multiple times.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 3 3 5-6"/></svg><span>High-quality eyecare, accessible to everyone, with great value products.</span></li>
+      </ul>
+    </div>
+    <div class="founders rv">
+      <div class="person">
+        <div class="mono" aria-hidden="true">DC</div>
+        <div><span class="role">Co-founder, Optometrist</span><h3>Derek Clare</h3><p>Experienced optometrist, and one half of the name over the door.</p></div>
+      </div>
+      <div class="person">
+        <div class="mono" aria-hidden="true">AI</div>
+        <div><span class="role">Co-founder, Dispensing Optician</span><h3>Alyson Illingworth</h3><p>Dedicated dispensing optician, and the other half.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="block services" id="eye-care">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">What we do</span>
+      <h2>Everything for your eyes, under one roof.</h2>
+      <p class="lead">From your first eye test to the finishing touches on a new pair of frames.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Eye examinations</h3>
+        <p>Painless, with no trick questions. Everyone should have their vision and eye health checked, glasses wearer or not.</p>
+        <ul><li>Slit lamp health check</li><li>Screening for glaucoma and diabetes-related eye disease</li><li>NHS or private</li></ul>
+        <a class="more" href="tel:01565632066">Book an eye test</a>
+      </article>
+      <article class="svc rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="4"/><circle cx="17.5" cy="14" r="4"/><path d="M10.5 14h3M2.5 14 4 8M21.5 14 20 8"/></svg></div>
+        <h3>Eyewear</h3>
+        <p>Frames matched to your lifestyle, face and comfort, with accurate measurements from a qualified Dispensing Optician.</p>
+        <ul><li>Designer and independent frames</li><li>Bespoke lenses with our RVT</li><li>Zeiss and Nikon lenses</li></ul>
+        <a class="more" href="#eyewear">How we fit eyewear</a>
+      </article>
+      <article class="svc rv" id="contact-lenses">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/><path d="M7.5 8.2A6 6 0 0 1 10 6.8"/></svg></div>
+        <h3>Contact lenses</h3>
+        <p>Comfortable, discreet and light for sport. New wearers are guided through every step, and existing wearers can be set up quickly.</p>
+        <ul><li>Daily, monthly and two-weekly soft lenses</li><li>Rigid gas-permeable lenses</li><li>Regular aftercare reviews</li></ul>
+        <a class="more" href="tel:01565632066">Ask about lenses</a>
+      </article>
+      <article class="svc rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M9.6 7.4h.01M14.4 7.4h.01"/></svg></div>
+        <h3>Children's eye care</h3>
+        <p>A friendly, informal atmosphere, with qualified Dispensing Opticians for every child's frames and NHS testing for under 16s.</p>
+        <ul><li>Optometrists experienced in paediatric testing</li><li>Myopia control lenses</li><li>A wide choice of young frames</li></ul>
+        <a class="more" href="tel:01565632066">Book for your child</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section class="block tech">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Behind the test</span>
+      <h2>A closer look at your eye health.</h2>
+      <p class="lead">Catching early warning signs makes treatment easier and more manageable. Our diagnostic equipment helps your optometrist see more.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tool rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+        <h3>Visual field machine</h3><p>Maps how much you can see around the edges of your vision.</p>
+      </div>
+      <div class="tool rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        <h3>HRT</h3><p>The Heidelberg Retina Tomograph, to assess the back of the eye.</p>
+      </div>
+      <div class="tool rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+        <h3>Retinal camera</h3><p>A clear picture of your retina, kept on record to compare over time.</p>
+      </div>
+      <div class="tool rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>
+        <h3>Relaxed Vision Terminal</h3><p>Takes a still image of you in your frame, so lenses are tailored like a great suit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EYEWEAR -->
+<section class="block eyewear" id="eyewear">
+  <div class="wrap eye-grid">
+    <div class="rv">
+      <span class="eyebrow">Eyewear</span>
+      <h2>Measured by experts. Made to measure.</h2>
+      <p class="lead">Accurate measurements come from experience and confidence, which is why we only employ fully qualified Dispensing Opticians.</p>
+      <p>A Dispensing Optician completes a three-year diploma, so the person choosing with you understands your prescription and what it means for your lenses.</p>
+      <blockquote class="quote">As an independent practice, we choose from lens options across the UK market, and trust Zeiss and Nikon for a high-quality finish every time.</blockquote>
+    </div>
+    <ol class="steps rv">
+      <li><div><b>We assess your prescription</b><span>Then help you choose a suitable frame from the many in-store.</span></div></li>
+      <li><div><b>We take your measurements</b><span>A few facial measurements, so you get the best vision through your new lenses.</span></div></li>
+      <li><div><b>We tailor your lenses</b><span>The RVT sends a series of measurements to the lab, for bespoke lenses.</span></div></li>
+      <li><div><b>Trusted partner labs make them</b><span>Your frame goes to a partner lab we trust to make the perfect pair.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="block brands" id="brands">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Brands</span>
+      <h2>A selection of our brands.</h2>
+      <p class="lead">Luxury houses alongside independent designers, so there's something that feels like you.</p>
+    </div>
+    <div class="brand-cols rv">
+      <div>
+        <h3>Luxury eyewear</h3>
+        <ul class="brand-list">
+          <li><strong>Tom Ford</strong><span>Distinctive, bold and refined</span></li>
+          <li><strong>Celine</strong><span>Understated sophistication</span></li>
+          <li><strong>Fendi</strong><span>Iconic Italian glamour</span></li>
+          <li><strong>Dior</strong><span>Where elegance meets innovation</span></li>
+          <li><strong>Prada</strong><span>High fashion, refined</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Independent designers</h3>
+        <ul class="brand-list">
+          <li><strong>Taylor Morris</strong><span>Quintessentially British</span></li>
+          <li><strong>Face a Face</strong><span>Bold, artistic, expressive</span></li>
+          <li><strong>Prodesign Denmark</strong><span>Clean Scandinavian design</span></li>
+          <li><strong>Ørgreen</strong><span>Scandinavian style, Japanese precision</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="brand-note rv">Collections vary between our two practices. If you have a brand in mind, give the practice a call before you visit.</p>
+  </div>
+</section>
+
+<!-- CONTACT LENSES + KIDS -->
+<section class="block cl">
+  <div class="wrap">
+    <div class="duo">
+      <div class="panel a rv">
+        <span class="eyebrow">Contact lenses</span>
+        <h2>Freedom from your frames.</h2>
+        <p>Many people see better through contact lenses than through glasses, and they're a lightweight choice for sport. We'll guide you on lens type, wearing schedule and care, around your lifestyle.</p>
+        <ul class="chips"><li>Daily disposables</li><li>Two-weekly</li><li>Monthly</li><li>Extended wear</li><li>Gas-permeable</li></ul>
+        <a class="btn btn-primary" href="tel:01565632066">Talk to us about lenses</a>
+      </div>
+      <div class="panel b rv">
+        <span class="eyebrow">Children and young people</span>
+        <h2>Protecting young eyes early.</h2>
+        <p>Short-sightedness is on the rise, and acting early gives better long-term outcomes. We offer myopia control, with specialised spectacle lenses or contact lenses, to help slow its progression.</p>
+        <ul class="chips"><li>NHS tests under 16</li><li>Myopia control</li><li>Qualified DOs for every child</li></ul>
+        <a class="btn btn-light" href="tel:01565632066">Book for your child</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOD TO KNOW -->
+<section class="know" aria-labelledby="know-h">
+  <div class="wrap">
+    <h2 id="know-h" class="rv" style="text-align:center;margin-bottom:30px">Good to know</h2>
+    <div class="know-box rv">
+      <div class="know-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>Call to book</h3><p>Call first for advice and to book an appointment. We prioritise appointments for choosing or collecting eyewear.</p>
+      </div>
+      <div class="know-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Closed 1pm to 2pm</h3><p>Both practices close daily for lunch between 1pm and 2pm.</p>
+      </div>
+      <div class="know-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>NHS or private</h3><p>NHS funding is based on clinical need. Your optometrist decides how often you should be seen.</p>
+      </div>
+      <div class="know-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <h3>Two practices</h3><p>Knutsford and Wilmslow, one team, one standard of care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIND US -->
+<section class="block find" id="find-us">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Find us</span>
+      <h2>Visit us on King Street.</h2>
+      <p class="lead">Our Knutsford practice is in the heart of town, with our sister practice in Wilmslow.</p>
+    </div>
+    <div class="find-grid">
+      <div class="branches rv">
+        <div class="branch main">
+          <span class="pill">Knutsford</span>
+          <h3>Clare &amp; Illingworth Knutsford</h3>
+          <address>101 King Street<br>Knutsford<br>Cheshire WA16 6EQ</address>
+          <div class="row">
+            <a class="btn btn-primary" href="tel:01565632066">01565 632066</a>
+            <a class="btn btn-outline" href="mailto:knutsford@theoptometrist.com">Email</a>
+          </div>
+        </div>
+        <div class="branch">
+          <span class="pill" style="background:var(--ink)">Wilmslow</span>
+          <h3>Clare &amp; Illingworth Wilmslow</h3>
+          <address>28 Water Lane<br>Wilmslow<br>Cheshire SK9 5AA</address>
+          <div class="row">
+            <a class="btn btn-primary" href="tel:01625530498">01625 530498</a>
+            <a class="btn btn-outline" href="mailto:wilmslow@theoptometrist.com">Email</a>
+          </div>
+        </div>
+      </div>
+      <div class="map rv">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <p>101 King Street, Knutsford WA16 6EQ</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=101+King+Street+Knutsford+WA16+6EQ" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top"><span class="name">Clare<i>&amp;</i>Illingworth</span><span class="tag">Optometrist and Contact Lens Practitioner</span></a>
+        <p style="margin-top:18px;max-width:340px">Independent opticians in Knutsford and Wilmslow, Cheshire, since 1990.</p>
+        <div class="social">
+          <a href="https://www.facebook.com/ClareandIllingworth" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/theoptometrist/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://twitter.com/theoptometrist" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <address><strong style="color:#fff">Knutsford</strong><br>101 King Street, Knutsford WA16 6EQ<br><a href="tel:01565632066">01565 632066</a><br><a href="mailto:knutsford@theoptometrist.com">knutsford@theoptometrist.com</a></address>
+        <address><strong style="color:#fff">Wilmslow</strong><br>28 Water Lane, Wilmslow SK9 5AA<br><a href="tel:01625530498">01625 530498</a><br><a href="mailto:wilmslow@theoptometrist.com">wilmslow@theoptometrist.com</a></address>
+      </div>
+      <div>
+        <h4>Opening times</h4>
+        <ul class="hours">
+          <li><span>Monday to Friday</span><span>9am to 1pm, 2pm to 5:30pm</span></li>
+          <li><span>Saturday</span><span>9am to 1pm, 2pm to 4pm</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+        <p style="margin-top:12px;font-size:.9rem">Closed daily between 1pm and 2pm.</p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; 2026 Clare &amp; Illingworth</span>
+      <span class="credit">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 21V10l6 3V10l6 3V6h3v7l5 2v6z"/></svg>
+        <span>Another small business site, sorted, by <a href="https://pixel-north.co.uk" target="_blank" rel="noopener">Pixel North</a></span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+
+  /* burger */
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){
+    var o=m.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);
+    b.setAttribute('aria-label',o?'Close menu':'Open menu');
+  });
+  m.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  });
+
+  /* branch switcher */
+  var data={
+    knutsford:{name:'Clare & Illingworth Knutsford',addr:'101 King Street<br>Knutsford, Cheshire WA16 6EQ',tel:'01565 632066',href:'tel:01565632066',mail:'mailto:knutsford@theoptometrist.com'},
+    wilmslow:{name:'Clare & Illingworth Wilmslow',addr:'28 Water Lane<br>Wilmslow, Cheshire SK9 5AA',tel:'01625 530498',href:'tel:01625530498',mail:'mailto:wilmslow@theoptometrist.com'}
+  };
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      var d=data[t.getAttribute('data-b')];
+      tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false');});
+      document.getElementById('v-name').textContent=d.name;
+      document.getElementById('v-addr').innerHTML=d.addr;
+      document.getElementById('v-tel').textContent=d.tel;
+      document.getElementById('v-call').setAttribute('href',d.href);
+      document.getElementById('v-mail').setAttribute('href',d.mail);
+    });
+  });
+
+  /* open / closed status (UK time) */
+  function ukNow(){
+    var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value;});
+    var days={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0};
+    return {d:days[o.weekday],m:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+  }
+  function fmt(mins){
+    var h=Math.floor(mins/60),mm=mins%60,s=h>=12?'pm':'am',h12=h%12||12;
+    return h12+(mm?':'+(mm<10?'0':'')+mm:'')+s;
+  }
+  function status(){
+    var n=ukNow(),dot=document.getElementById('v-dot'),el=document.getElementById('v-status');
+    var close2=n.d===6?16*60:17*60+30;
+    var spans=n.d===0?[]:[[9*60,13*60],[14*60,close2]];
+    var cls='',txt='';
+    if(!spans.length){cls='';txt='Closed today. Opens Monday at 9am';}
+    else if(n.m>=spans[0][0]&&n.m<spans[0][1]){cls='open';txt='Open now, until 1pm';}
+    else if(n.m>=spans[1][0]&&n.m<spans[1][1]){cls='open';txt='Open now, until '+fmt(spans[1][1]);}
+    else if(n.m>=spans[0][1]&&n.m<spans[1][0]){cls='lunch';txt='Closed for lunch, reopens at 2pm';}
+    else if(n.m<spans[0][0]){cls='';txt='Closed, opens today at 9am';}
+    else{cls='';txt=n.d===6?'Closed, opens Monday at 9am':'Closed, opens tomorrow at 9am';}
+    dot.className='dot '+cls;el.textContent=txt;
+  }
+  status();setInterval(status,60000);
+
+  /* scroll reveal */
+  var rv=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    rv.forEach(function(e){e.classList.add('in');});return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  rv.forEach(function(e){
+    var r=e.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0){e.classList.add('in');}else{io.observe(e);}
+  });
+})();
+</script>
+</body>
+</html>
