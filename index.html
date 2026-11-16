@@ -88,20 +88,25 @@ nav .btn{padding:12px 20px;font-size:.95rem;color:#fff;margin-left:6px}
 
 /* visit card */
 .visit-band{margin-top:-96px;position:relative;z-index:5;background:linear-gradient(180deg,transparent 96px,#fff 96px)}
-.visit{background:#fff;border-radius:22px;box-shadow:0 24px 60px -20px rgba(18,28,27,.35);padding:26px 30px;display:grid;grid-template-columns:auto 1.15fr 1fr auto;gap:28px;align-items:center}
-.tabs{display:flex;flex-direction:column;gap:8px}
-.tab{font:700 .95rem var(--sans);border:2px solid var(--mist);background:var(--mist);color:var(--teal-d);padding:10px 18px;border-radius:999px;cursor:pointer;text-align:left;transition:all .2s}
-.tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.visit h3{font-size:1.5rem;margin-bottom:.15em}
-.visit address{font-style:normal;color:var(--muted);line-height:1.5}
-.status{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);margin-bottom:.15em}
+.visit{background:#fff;border-radius:22px;box-shadow:0 24px 60px -20px rgba(18,28,27,.35);padding:28px 10px;display:grid;grid-template-columns:.9fr 1fr 1fr;align-items:center}
+.visit>div{padding:4px 30px}
+.vb,.vstatus+.vb{border-left:1px solid rgba(30,38,37,.12)}
+.vb h3{font-size:1.7rem;margin-bottom:.1em}
+.visit address{font-style:normal;color:var(--muted);line-height:1.5;margin-bottom:14px}
+.vb-cta{display:flex;flex-wrap:wrap;gap:8px}
+.vb-cta .btn{padding:12px 20px;font-size:.95rem}
+.status{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);margin-bottom:.35em}
 .dot{width:11px;height:11px;border-radius:50%;background:#9AA5A4;flex:none}
 .dot.open{background:#1E9E5A;box-shadow:0 0 0 4px rgba(30,158,90,.18)}
 .dot.lunch{background:var(--brass)}
-.visit small{color:var(--muted);display:block;line-height:1.45}
-.visit-cta{display:flex;flex-direction:column;gap:8px}
-.visit-cta .btn{justify-content:center}
-
+.visit small{color:var(--muted);display:block;line-height:1.5}
+.hero-calls{gap:14px}
+.hero-calls .btn{padding:13px 24px;flex:1 1 230px;max-width:290px}
+.hero-calls .btn span{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.hero-calls .btn small{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.hero-more{margin:22px 0 0}
+.hero-more a{color:rgba(255,255,255,.85);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.map-btns{display:flex;flex-direction:column;gap:10px}
 /* proof */
 .proof{background:#fff;padding:44px 0 60px}
 .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -272,7 +277,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .rv{opacity:1;transform:none;transition:none}
-  .btn,.tab{transition:none}
+  .btn{transition:none}
 }
 
 /* ---------- responsive ---------- */
@@ -280,8 +285,9 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   .hero .hero-grid{grid-template-columns:1fr;padding:56px 24px 170px;gap:10px}
   .hero-art{max-width:460px;margin:14px auto 0;width:100%}
   .hero-badge{left:12px}
-  .visit{grid-template-columns:1fr 1fr;gap:22px}
-  .tabs{flex-direction:row;grid-column:1/-1}
+  .visit{grid-template-columns:1fr 1fr;gap:22px 0}
+  .vstatus{grid-column:1/-1;padding-bottom:16px!important;border-bottom:1px solid rgba(30,38,37,.12)}
+  .vstatus+.vb{border-left:0}
   .proof-grid{grid-template-columns:repeat(2,1fr)}
   .svc-grid,.tech-grid{grid-template-columns:repeat(2,1fr)}
   .know-box{grid-template-columns:repeat(2,1fr)}
@@ -316,9 +322,11 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   .hero .hero-grid{padding:44px 20px 176px}
   .hero-btns .btn{flex:1 1 100%;justify-content:center}
   .wrap{padding:0 20px}
-  .visit{grid-template-columns:1fr;padding:22px}
-  .tabs{flex-direction:row}
-  .tab{flex:1;text-align:center}
+  .visit{grid-template-columns:1fr;padding:22px 6px;gap:0}
+  .vstatus{padding-bottom:18px!important}
+  .vb,.vstatus+.vb{border-left:0;border-top:1px solid rgba(30,38,37,.12);padding-top:20px!important;margin-top:18px}
+  .vstatus+.vb{margin-top:0}
+  .hero-calls .btn{max-width:none;flex:1 1 100%}
   .proof{padding:44px 0}
   .panel{padding:32px 24px}
   .know-box{grid-template-columns:1fr;padding:28px 24px}
@@ -355,7 +363,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
         <li><a href="#contact-lenses">Contact lenses</a></li>
         <li><a href="#about">About us</a></li>
         <li><a href="#find-us">Find us</a></li>
-        <li><a class="btn btn-primary" href="tel:01565632066">Book an eye test</a></li>
+        <li><a class="btn btn-primary" href="#find-us">Book an eye test</a></li>
       </ul>
     </nav>
   </div>
@@ -371,13 +379,11 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
       <span class="eyebrow kicker">Independent opticians, Knutsford and Wilmslow</span>
       <h1>Clear sight, <em>beautifully</em> framed.</h1>
       <p class="lead">Still owned by its two founders and proudly independent for 36 years. Thorough eye examinations, designer and independent frames, and a team who take the time to get to know you.</p>
-      <div class="hero-btns">
-        <a class="btn btn-light" href="tel:01565632066" id="hero-call">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-          Call Knutsford 01565 632066
-        </a>
-        <a class="btn btn-ghost" href="#eye-care">Our services</a>
+      <div class="hero-btns hero-calls">
+        <a class="btn btn-light" href="tel:01565632066"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><small>Knutsford</small>01565 632066</span></a>
+        <a class="btn btn-light" href="tel:01625530498"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><small>Wilmslow</small>01625 530498</span></a>
       </div>
+      <p class="hero-more"><a href="#eye-care">Explore our services</a></p>
     </div>
 
     <div class="hero-art">
@@ -390,24 +396,25 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 <!-- VISIT CARD -->
 <div class="visit-band"><div class="wrap">
   <div class="visit rv" id="visit">
-    <div class="tabs" role="group" aria-label="Choose a practice">
-      <button class="tab" type="button" data-b="knutsford" aria-pressed="true">Knutsford</button>
-      <button class="tab" type="button" data-b="wilmslow" aria-pressed="false">Wilmslow</button>
-    </div>
-    <div>
-      <h3 id="v-name">Clare &amp; Illingworth Knutsford</h3>
-      <address id="v-addr">101 King Street<br>Knutsford, Cheshire WA16 6EQ</address>
-    </div>
-    <div>
+    <div class="vstatus">
       <div class="status"><span class="dot" id="v-dot"></span><span id="v-status">Opening times</span></div>
-      <small>Mon to Fri 9am to 1pm, 2pm to 5:30pm<br>Saturday 9am to 1pm, 2pm to 4pm</small>
+      <small>Both practices<br>Mon to Fri 9am to 1pm, 2pm to 5:30pm<br>Saturday 9am to 1pm, 2pm to 4pm</small>
     </div>
-    <div class="visit-cta">
-      <a class="btn btn-primary" id="v-call" href="tel:01565632066">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-        <span id="v-tel">01565 632066</span>
-      </a>
-      <a class="btn btn-outline" id="v-mail" href="mailto:knutsford@theoptometrist.com">Email the practice</a>
+    <div class="vb">
+      <h3>Knutsford</h3>
+      <address>101 King Street<br>Knutsford, Cheshire WA16 6EQ</address>
+      <div class="vb-cta">
+        <a class="btn btn-primary" href="tel:01565632066"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>01565 632066</a>
+        <a class="btn btn-outline" href="mailto:knutsford@theoptometrist.com">Email</a>
+      </div>
+    </div>
+    <div class="vb">
+      <h3>Wilmslow</h3>
+      <address>28 Water Lane<br>Wilmslow, Cheshire SK9 5AA</address>
+      <div class="vb-cta">
+        <a class="btn btn-primary" href="tel:01625530498"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>01625 530498</a>
+        <a class="btn btn-outline" href="mailto:wilmslow@theoptometrist.com">Email</a>
+      </div>
     </div>
   </div>
 </div></div>
@@ -468,7 +475,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
         <h3>Eye examinations</h3>
         <p>Painless, with no trick questions. Everyone should have their vision and eye health checked, glasses wearer or not.</p>
         <ul><li>Slit lamp health check</li><li>Screening for glaucoma and diabetes-related eye disease</li><li>NHS or private</li></ul>
-        <a class="more" href="tel:01565632066">Book an eye test</a>
+        <a class="more" href="#find-us">Book an eye test</a>
       </article>
       <article class="svc rv">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="14" r="4"/><circle cx="17.5" cy="14" r="4"/><path d="M10.5 14h3M2.5 14 4 8M21.5 14 20 8"/></svg></div>
@@ -482,14 +489,14 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
         <h3>Contact lenses</h3>
         <p>Comfortable, discreet and light for sport. New wearers are guided through every step, and existing wearers can be set up quickly.</p>
         <ul><li>Daily, monthly and two-weekly soft lenses</li><li>Rigid gas-permeable lenses</li><li>Regular aftercare reviews</li></ul>
-        <a class="more" href="tel:01565632066">Ask about lenses</a>
+        <a class="more" href="#find-us">Ask about lenses</a>
       </article>
       <article class="svc rv">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M9.6 7.4h.01M14.4 7.4h.01"/></svg></div>
         <h3>Children's eye care</h3>
         <p>A friendly, informal atmosphere, with qualified Dispensing Opticians for every child's frames and NHS testing for under 16s.</p>
         <ul><li>Optometrists experienced in paediatric testing</li><li>Myopia control lenses</li><li>A wide choice of young frames</li></ul>
-        <a class="more" href="tel:01565632066">Book for your child</a>
+        <a class="more" href="#find-us">Book for your child</a>
       </article>
     </div>
   </div>
@@ -606,14 +613,14 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
         <h2>Freedom from your frames.</h2>
         <p>Many people see better through contact lenses than through glasses, and they're a lightweight choice for sport. We'll guide you on lens type, wearing schedule and care, around your lifestyle.</p>
         <ul class="chips"><li>Daily disposables</li><li>Two-weekly</li><li>Monthly</li><li>Extended wear</li><li>Gas-permeable</li></ul>
-        <a class="btn btn-primary" href="tel:01565632066">Talk to us about lenses</a>
+        <a class="btn btn-primary" href="#find-us">Talk to us about lenses</a>
       </div>
       <div class="panel b rv">
         <span class="eyebrow">Children and young people</span>
         <h2>Protecting young eyes early.</h2>
         <p>Short-sightedness is on the rise, and acting early gives better long-term outcomes. We offer myopia control, with specialised spectacle lenses or contact lenses, to help slow its progression.</p>
         <ul class="chips"><li>NHS tests under 16</li><li>Myopia control</li><li>Qualified DOs for every child</li></ul>
-        <a class="btn btn-light" href="tel:01565632066">Book for your child</a>
+        <a class="btn btn-light" href="#find-us">Book for your child</a>
       </div>
     </div>
   </div>
@@ -663,12 +670,12 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Find us</span>
-      <h2>Visit us on King Street.</h2>
-      <p class="lead">Our Knutsford practice is in the heart of town, with our sister practice in Wilmslow.</p>
+      <h2>Visit us in Knutsford or Wilmslow.</h2>
+      <p class="lead">Two practices, one team. Call or email whichever is nearest to you.</p>
     </div>
     <div class="find-grid">
       <div class="branches rv">
-        <div class="branch main">
+        <div class="branch">
           <span class="pill">Knutsford</span>
           <h3>Clare &amp; Illingworth Knutsford</h3>
           <address>101 King Street<br>Knutsford<br>Cheshire WA16 6EQ</address>
@@ -678,7 +685,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
           </div>
         </div>
         <div class="branch">
-          <span class="pill" style="background:var(--ink)">Wilmslow</span>
+          <span class="pill">Wilmslow</span>
           <h3>Clare &amp; Illingworth Wilmslow</h3>
           <address>28 Water Lane<br>Wilmslow<br>Cheshire SK9 5AA</address>
           <div class="row">
@@ -690,8 +697,11 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
       <div class="map rv">
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
-          <p>101 King Street, Knutsford WA16 6EQ</p>
-          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=101+King+Street+Knutsford+WA16+6EQ" target="_blank" rel="noopener">Open in Google Maps</a>
+          <p>Find your nearest practice</p>
+          <div class="map-btns">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=101+King+Street+Knutsford+WA16+6EQ" target="_blank" rel="noopener">Knutsford on Google Maps</a>
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=28+Water+Lane+Wilmslow+SK9+5AA" target="_blank" rel="noopener">Wilmslow on Google Maps</a>
+          </div>
         </div>
       </div>
     </div>
@@ -749,24 +759,6 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   });
   m.addEventListener('click',function(e){
     if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false');}
-  });
-
-  /* branch switcher */
-  var data={
-    knutsford:{name:'Clare & Illingworth Knutsford',addr:'101 King Street<br>Knutsford, Cheshire WA16 6EQ',tel:'01565 632066',href:'tel:01565632066',mail:'mailto:knutsford@theoptometrist.com'},
-    wilmslow:{name:'Clare & Illingworth Wilmslow',addr:'28 Water Lane<br>Wilmslow, Cheshire SK9 5AA',tel:'01625 530498',href:'tel:01625530498',mail:'mailto:wilmslow@theoptometrist.com'}
-  };
-  var tabs=document.querySelectorAll('.tab');
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      var d=data[t.getAttribute('data-b')];
-      tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false');});
-      document.getElementById('v-name').textContent=d.name;
-      document.getElementById('v-addr').innerHTML=d.addr;
-      document.getElementById('v-tel').textContent=d.tel;
-      document.getElementById('v-call').setAttribute('href',d.href);
-      document.getElementById('v-mail').setAttribute('href',d.mail);
-    });
   });
 
   /* open / closed status (UK time) */
