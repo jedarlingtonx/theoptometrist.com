@@ -85,10 +85,6 @@ nav .btn{padding:12px 20px;font-size:.95rem;color:#fff;margin-left:6px}
 .hero .kicker{color:var(--brass)}
 .hero p.lead{color:rgba(255,255,255,.86);font-size:1.2rem}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.hero-art{position:relative;aspect-ratio:1/.86}
-.hero-art svg{width:100%;height:100%}
-.chart{position:absolute;left:-12%;bottom:-14%;text-align:left;font-family:var(--serif);font-weight:600;color:rgba(255,255,255,.075);text-align:right;line-height:1.02;letter-spacing:.22em;user-select:none;pointer-events:none}
-.chart span{display:block}
 
 /* visit card */
 .visit-band{margin-top:-96px;position:relative;z-index:5;background:linear-gradient(180deg,transparent 96px,#fff 96px)}
@@ -205,18 +201,35 @@ section.block{padding:96px 0}
 .team figcaption{position:absolute;left:14px;bottom:14px;background:rgba(30,38,37,.82);color:#fff;font-weight:700;font-size:.88rem;padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px)}
 .person{padding:18px 20px}
 .mono{width:56px;height:56px;font-size:1.4rem}
+.hero-art{position:relative}
+.hero-photo{aspect-ratio:1/1.08;border-radius:240px 240px 28px 28px;overflow:hidden;border:2px solid rgba(217,178,107,.6);box-shadow:0 30px 70px -30px rgba(0,0,0,.75);background:var(--ink2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.hero-badge{position:absolute;left:-18px;bottom:44px;background:var(--brass);color:var(--ink);font-weight:700;font-size:.95rem;line-height:1.25;padding:13px 20px;border-radius:14px;box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.photo{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--sand)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo.wide{aspect-ratio:16/10;margin-bottom:16px}
+.photo.wide img{object-position:50% 28%}
+.tech-top{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;margin-bottom:46px}
+.tech-top .head{margin-bottom:0}
+.tech-top .photo{aspect-ratio:4/3;border:1px solid rgba(255,255,255,.18)}
+.tech-top .photo img{object-position:30% 40%}
 /* dry eye */
 .dry{background:var(--ivory);padding:0 0 96px}
-.dry-box{background:var(--mist);border-radius:22px;padding:38px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
-.dry-ico{width:72px;height:72px;border-radius:20px;background:#fff;color:var(--teal-d);display:grid;place-items:center}
-.dry-ico svg{width:38px;height:38px}
+.dry-box{background:var(--mist);border-radius:22px;padding:0;overflow:hidden;display:grid;grid-template-columns:250px 1fr auto;gap:38px;align-items:center}
+.dry-photo{margin:0;align-self:stretch;min-height:280px}
+.dry-photo img{width:100%;height:100%;object-fit:cover;object-position:30% 35%;display:block}
+.dry-box .btn{margin-right:40px}
+.dry-box>div{padding:34px 0}
 .dry-box h2{font-size:clamp(1.9rem,3vw,2.4rem);margin-bottom:.2em}
 .dry-box p{margin:0;color:var(--muted);max-width:620px}
 .dry-box p strong{color:var(--ink)}
 /* closer */
-.closer{background:var(--ink);color:#fff;text-align:center;padding:92px 0;position:relative;overflow:hidden}
+.closer{background:var(--ink);color:#fff;text-align:left;padding:92px 0;position:relative;overflow:hidden}
 .closer::before{content:"";position:absolute;left:50%;top:-40%;width:80%;height:180%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(14,124,123,.4),rgba(14,124,123,0) 70%);pointer-events:none}
 .closer .wrap{position:relative}
+.closer-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.closer-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:1/1;border:2px solid rgba(217,178,107,.5)}
+.closer-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
 .closer-line{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.08;margin:0 0 .6em}
 .closer-line em{color:var(--brass);font-weight:500}
 
@@ -265,7 +278,8 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 /* ---------- responsive ---------- */
 @media (max-width:1100px){
   .hero .hero-grid{grid-template-columns:1fr;padding:56px 24px 170px;gap:10px}
-  .hero-art{max-width:520px;margin:0 auto;width:100%}
+  .hero-art{max-width:460px;margin:14px auto 0;width:100%}
+  .hero-badge{left:12px}
   .visit{grid-template-columns:1fr 1fr;gap:22px}
   .tabs{flex-direction:row;grid-column:1/-1}
   .proof-grid{grid-template-columns:repeat(2,1fr)}
@@ -273,8 +287,13 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   .know-box{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:860px){
-  .dry-box{grid-template-columns:1fr;padding:30px 26px;gap:18px}
-  .dry-box .btn{justify-self:start}
+  .dry-box{grid-template-columns:1fr;gap:0}
+  .dry-photo{min-height:0;aspect-ratio:4/3}
+  .dry-photo img{object-position:30% 30%}
+  .dry-box>div{padding:26px 26px 16px}
+  .dry-box .btn{justify-self:start;margin:0 26px 28px}
+  .tech-top,.closer-grid{grid-template-columns:1fr;gap:30px}
+  .closer-photo{aspect-ratio:4/3}
   .welcome-grid,.eye-grid,.duo,.find-grid,.brand-cols{grid-template-columns:1fr}
   .welcome-grid,.eye-grid{gap:34px}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -307,7 +326,6 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
   .brand-list span{display:none}
   .foot-grid{grid-template-columns:1fr}
   .legal{flex-direction:column}
-  .chart{display:none}
 }
 @media (max-width:420px){
   .proof-grid{grid-template-columns:1fr}
@@ -362,49 +380,9 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
       </div>
     </div>
 
-    <div class="hero-art" aria-hidden="true">
-      <div class="chart">
-        <span style="font-size:3.4rem">E</span>
-        <span style="font-size:2.7rem">F P</span>
-        <span style="font-size:2.1rem">T O Z</span>
-        <span style="font-size:1.6rem">L P E D</span>
-        <span style="font-size:1.2rem">P E C F D</span>
-      </div>
-      <svg viewBox="0 0 560 480" fill="none">
-        <defs>
-          <linearGradient id="lensA" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#7FD6D3" stop-opacity=".55"/>
-            <stop offset="1" stop-color="#0E7C7B" stop-opacity=".18"/>
-          </linearGradient>
-          <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#F3D99A"/>
-            <stop offset="1" stop-color="#B88A3E"/>
-          </linearGradient>
-        </defs>
-        <ellipse cx="280" cy="420" rx="210" ry="18" fill="#000" opacity=".28"/>
-        <!-- arms -->
-        <path d="M82 214 C40 214 24 236 30 290" stroke="url(#rim)" stroke-width="9" stroke-linecap="round"/>
-        <path d="M478 214 C520 214 536 236 530 290" stroke="url(#rim)" stroke-width="9" stroke-linecap="round"/>
-        <!-- lenses -->
-        <rect x="78" y="168" width="190" height="168" rx="58" fill="url(#lensA)" stroke="url(#rim)" stroke-width="10"/>
-        <rect x="292" y="168" width="190" height="168" rx="58" fill="url(#lensA)" stroke="url(#rim)" stroke-width="10"/>
-        <!-- bridge -->
-        <path d="M268 222 C276 204 284 204 292 222" stroke="url(#rim)" stroke-width="9" stroke-linecap="round"/>
-        <!-- brow bar -->
-        <path d="M92 190 C150 172 210 172 262 186" stroke="#F3D99A" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-        <path d="M298 186 C350 172 410 172 468 190" stroke="#F3D99A" stroke-width="3" stroke-linecap="round" opacity=".5"/>
-        <!-- reflections -->
-        <path d="M112 214 L168 190" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".55"/>
-        <path d="M130 244 L152 235" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".4"/>
-        <path d="M326 214 L382 190" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".55"/>
-        <path d="M344 244 L366 235" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".4"/>
-        <!-- floating focus rings -->
-        <circle cx="470" cy="96" r="34" stroke="#D9B26B" stroke-width="2" opacity=".6"/>
-        <circle cx="470" cy="96" r="18" stroke="#D9B26B" stroke-width="2" opacity=".5"/>
-        <circle cx="470" cy="96" r="4" fill="#D9B26B"/>
-        <path d="M70 92 l8 -18 l8 18 l18 8 l-18 8 l-8 18 l-8 -18 l-18 -8z" fill="#D9B26B" opacity=".75"/>
-        <path d="M118 396 l5 -11 l5 11 l11 5 l-11 5 l-5 11 l-5 -11 l-11 -5z" fill="#7FD6D3" opacity=".7"/>
-      </svg>
+    <div class="hero-art">
+      <div class="hero-photo"><img src="/images/hero-glasses.jpg" width="1100" height="1100" fetchpriority="high" alt="A man in fine metal-framed glasses, looking thoughtfully to one side"></div>
+      <div class="hero-badge">Independent<br>since 1990</div>
     </div>
   </div>
 </section>
@@ -521,7 +499,7 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 <section class="dry" aria-labelledby="dry-h">
   <div class="wrap">
     <div class="dry-box rv">
-      <div class="dry-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.2"/></svg></div>
+      <figure class="dry-photo"><img src="/images/dry-eye-clinic.jpg" width="720" height="1280" loading="lazy" alt="An optometrist sitting beside a slit lamp in a consulting room"></figure>
       <div>
         <span class="eyebrow">Specialist care, Wilmslow</span>
         <h2 id="dry-h">Dry Eye Clinic</h2>
@@ -535,10 +513,13 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 <!-- TECHNOLOGY -->
 <section class="block tech">
   <div class="wrap">
-    <div class="head rv">
-      <span class="eyebrow">Behind the test</span>
-      <h2>A closer look at your eye health.</h2>
-      <p class="lead">Catching early warning signs makes treatment easier and more manageable. Our diagnostic equipment helps your optometrist see more.</p>
+    <div class="tech-top rv">
+      <div class="head">
+        <span class="eyebrow">Behind the test</span>
+        <h2>A closer look at your eye health.</h2>
+        <p class="lead">Catching early warning signs makes treatment easier and more manageable. Our diagnostic equipment helps your optometrist see more.</p>
+      </div>
+      <figure class="photo"><img src="/images/slit-lamp-exam.jpg" width="1000" height="1000" loading="lazy" alt="An optometrist carrying out an eye examination using a slit lamp"></figure>
     </div>
     <div class="tech-grid">
       <div class="tool rv">
@@ -571,12 +552,15 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
       <p>A Dispensing Optician completes a three-year diploma, so the person choosing with you understands your prescription and what it means for your lenses.</p>
       <blockquote class="quote">As an independent practice, we choose from lens options across the UK market, and trust Zeiss and Nikon for a high-quality finish every time.</blockquote>
     </div>
-    <ol class="steps rv">
+    <div class="rv">
+      <figure class="photo wide"><img src="/images/frames-mirror.jpg" width="1000" height="1333" loading="lazy" alt="A smiling patient in clear-framed glasses holding up a Taylor Morris hand mirror to check her frames"></figure>
+    <ol class="steps">
       <li><div><b>We assess your prescription</b><span>Then help you choose a suitable frame from the many in-store.</span></div></li>
       <li><div><b>We take your measurements</b><span>A few facial measurements, so you get the best vision through your new lenses.</span></div></li>
       <li><div><b>We tailor your lenses</b><span>The RVT sends a series of measurements to the lab, for bespoke lenses.</span></div></li>
       <li><div><b>Trusted partner labs make them</b><span>Your frame goes to a partner lab we trust to make the perfect pair.</span></div></li>
     </ol>
+    </div>
   </div>
 </section>
 
@@ -662,12 +646,15 @@ footer address{font-style:normal;line-height:1.6;margin-bottom:12px}
 
 <!-- CLOSER -->
 <section class="closer">
-  <div class="wrap rv">
-    <p class="closer-line">Still independent.<br>Still local.<br><em>Still Clare &amp; Illingworth.</em></p>
-    <div class="hero-btns" style="justify-content:center">
-      <a class="btn btn-light" href="tel:01565632066">Call Knutsford 01565 632066</a>
-      <a class="btn btn-ghost" href="tel:01625530498">Call Wilmslow 01625 530498</a>
+  <div class="wrap closer-grid rv">
+    <div>
+      <p class="closer-line">Still independent.<br>Still local.<br><em>Still Clare &amp; Illingworth.</em></p>
+      <div class="hero-btns">
+        <a class="btn btn-light" href="tel:01565632066">Call Knutsford 01565 632066</a>
+        <a class="btn btn-ghost" href="tel:01625530498">Call Wilmslow 01625 530498</a>
+      </div>
     </div>
+    <figure class="closer-photo"><img src="/images/team-stairs.jpg" width="1100" height="1100" loading="lazy" alt="Members of the Clare &amp; Illingworth team smiling together on a staircase"></figure>
   </div>
 </section>
 
